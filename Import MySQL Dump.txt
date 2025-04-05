@@ -1,0 +1,15 @@
+To import relations (tables with relationships) into MySQL using the command line, follow these steps:
+
+1. Prepare Your SQL Dump File
+Ensure you have a `.sql` file that contains:
+- `CREATE TABLE` statements (including foreign key constraints).
+- `INSERT INTO` statements (to populate data).
+
+2. Open MySQL Command Line
+Log into MySQL using the command line:
+
+sh
+mysql -u your_username -p
+
+
+Enter your password when prompted.
