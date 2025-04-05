@@ -13,3 +13,34 @@ mysql -u your_username -p
 
 
 Enter your password when prompted.
+
+3. Create the Database (If Not Exists)
+If the database isn't created yet, do it manually:
+
+sql
+CREATE DATABASE your_database_name;
+USE your_database_name;
+
+
+4. Import the SQL File
+Exit MySQL and use the following command in the terminal:
+
+sh
+mysql -u your_username -p your_database_name < your_sql_file.sql
+
+
+This will import all table definitions and relationships.
+
+5. Verify the Import
+After importing, log into MySQL again and check:
+
+sql
+SHOW TABLES;
+
+
+To inspect foreign key constraints:
+
+sql
+SELECT TABLE_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME
+FROM information_schema.KEY_COLUMN_USAGE
+WHERE REFERENCED_TABLE_NAME IS NOT NULL;
